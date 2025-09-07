@@ -1,0 +1,15 @@
+# Ignore Arduino build files
+*.hex
+*.elf
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE settings
+.vscode/
+.idea/
