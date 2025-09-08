@@ -1,118 +1,72 @@
-\# IoT-Enabled Solar Panel Cleaning System
+🌞 IoT-Enabled Solar Panel Cleaning System
+📖 About the Project
+
+An IoT-enabled self-cleaning system for solar panels that improves efficiency by automatically removing dust, scheduling cleanings, and enabling remote monitoring with minimal water usage.
+
+🔧 System Components
+
+Arduino + RTC DS1307 → Dust detection (LDR) & scheduled cleaning
+
+ESP32 + Bolt IoT Cloud → Remote monitoring & manual cleaning
+
+Relay + Pump/Motor → Automated water spray mechanism
+
+Flask Backend (Optional) → Local simulation & demo
+
+⚡ Features
+
+🧹 Automatic cleaning when dust is detected
+
+⏰ Scheduled cleaning (e.g., daily at 10 AM)
+
+🌐 Remote manual cleaning via Bolt IoT Cloud
+
+💧 Water-efficient — cleans only when necessary
+
+🖥️ Optional Flask backend for testing/interviews
 
 
-
-\## 🌞 Project Overview
-
-This project is an \*\*IoT-enabled solar panel self-cleaning system\*\*.  
-
-It improves solar panel efficiency by removing dust and allows \*\*scheduled cleaning\*\* with minimal water usage.
-
-
-
-The system uses:
-
-\- \*\*Arduino + RTC DS1307\*\* → Dust detection (via LDR sensor) and scheduled cleaning.
-
-\- \*\*ESP32 with Bolt IoT Cloud\*\* → Remote monitoring and manual cleaning control.
-
-\- \*\*Relay + Pump/Motor\*\* → For water spraying mechanism.
-
-\- \*\*Minimal Flask Backend\*\* (optional) → For local simulation.
-
-
-
----
-
-
-
-\## ⚡ Features
-
-\- Automatic cleaning when dust is detected.
-
-\- Scheduled cleaning (e.g., daily at 10 AM).
-
-\- Remote manual cleaning via \*\*Bolt IoT Cloud dashboard\*\*.
-
-\- Minimal backend (Flask) for testing and interview showcase.
-
-\- Saves water by cleaning only when necessary.
-
-
-
----
-
-
-
-\## 🛠️ Hardware Used
-
-\- Arduino UNO
-
-\- ESP32 Module (Bolt IoT Cloud integrated)
-
-\- RTC DS1307 / DS3231
-
-\- LDR Sensor
-
-\- Relay Module
-
-\- Water Pump / Motor
-
-\- Solar Panel (for demo)
-
-
-
----
-
-
-
-\## 📂 Project Structure
+| Component               | Purpose / Function                                                                  |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| **Arduino UNO**         | Controls the LDR sensor, RTC, and relay module for cleaning automation.             |
+| **ESP32**               | Connects to **Bolt IoT Cloud** for remote monitoring and manual control.            |
+| **RTC DS1307 / DS3231** | Provides real-time clock for scheduled cleaning (e.g., daily at 10 AM).             |
+| **LDR Sensor**          | Detects dust levels by measuring light intensity on the solar panel.                |
+| **Relay Module**        | Acts as a switch to control the water pump/motor based on Arduino’s commands.       |
+| **Water Pump / Motor**  | Sprays water to clean the solar panel surface.                                      |
+| **Solar Panel**         | Used in the demo setup; the target device being cleaned for efficiency improvement. |
 
 
 iot-solar-cleaner/
-
+│
 ├── firmware/
-
-│ ├── arduino/solar\_cleaner.ino
-
-│ └── esp32/bolt\_client.ino
-
-├── backend/app.py
-
+│   ├── arduino/solar_cleaner.ino      # Arduino sketch
+│   └── esp32/bolt_client.ino          # ESP32 firmware
+│
+├── backend/app.py                     # Flask backend (optional)
+│
 ├── docs/
-
-│ ├── architecture-diagram.png
-
-│ ├── workflow.png
-
-│ └── project\_report.pdf
-
-├── ui/bolt\_ui.md
-
+│   ├── architecture-diagram.png
+│   ├── workflow.png
+│   └── project_report.pdf
+│
+├── ui/bolt_ui.md                      # Bolt IoT UI setup guide
 ├── .gitignore
-
 ├── README.md
-
 └── LICENSE
 
 
 
----
+🚀 How to Run
+1️⃣ Arduino Firmware
 
+Upload solar_cleaner.ino to Arduino UNO using Arduino IDE.
+Handles dust detection (LDR) & scheduled cleaning (RTC).
 
+2️⃣ ESP32 Firmware
 
-\## 🚀 How to Run
-
-1\. \*\*Arduino\*\*: Upload `solar\_cleaner.ino` using Arduino IDE.
-
-2\. \*\*ESP32\*\*: Upload `bolt\_client.ino` using Arduino IDE with ESP32 board support.
-
-3\. \*\*Backend (optional)\*\*:
-
-&nbsp;  ```bash
-
-&nbsp;  python app.py
-
+Upload bolt_client.ino to ESP32 with Bolt IoT integration.
+Enables remote control & monitoring.
 
 
 
