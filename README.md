@@ -56,7 +56,6 @@ iot-solar-cleaner/
 └── LICENSE
 
 
-
 🚀 How to Run
 1️⃣ Arduino Firmware
 
